@@ -28,8 +28,8 @@ events.addEventListener('secondary', ({ data, lastEventId }) => {
   document.querySelector('#messages').appendChild(element);
 });
 
-events.onerror = ({ error }) => {
+events.addEventListener('error', ({ error }) => {
   const element = document.createElement('p');
   element.innerHTML = error;
   document.querySelector('#errors').appendChild(element);
-};
+});
